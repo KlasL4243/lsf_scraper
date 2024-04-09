@@ -29,3 +29,6 @@ status_bar = driver.find_element(By.CLASS_NAME, "divloginstatus")
 if "Logout" not in status_bar.text:
     print("Login failed!")
     
+content_max = driver.find_element(By.CLASS_NAME, "content_max")
+table = content_max.find_elements(By.CSS_SELECTOR, "tbody")
+print([x.text for x in table])
